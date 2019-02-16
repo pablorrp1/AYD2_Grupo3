@@ -8,3 +8,9 @@ adonis make:view <nombre>/<nombre>
 
 -- crea un controlador
 adonis make:controller <nombre>
+
+-- crea una migracion (tabla)
+adonis make:migration <nombre>
+
+-- correr migracion
+adonis migration:run
