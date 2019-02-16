@@ -16,4 +16,10 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
-Route.on('/').render('welcome')
+Route.on('/').render('home')
+
+/*
+    Route.get('<ruta>',function(){})
+    Route.get('<ruta>/<:id>',function({params}){})
+    Route.get('<ruta>','<controlador>.<funcion>')
+*/
