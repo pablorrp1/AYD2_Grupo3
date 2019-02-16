@@ -18,6 +18,12 @@ const Route = use('Route')
 
 Route.on('/').render('home')
 
+Route.get('/producto/Agregar', 'ProductocontrolController.add')
+
+Route.post('/producto', 'ProductocontrolController.store')
+
+
+
 /*
     Route.get('<ruta>',function(){})
     Route.get('<ruta>/<:id>',function({params}){})
