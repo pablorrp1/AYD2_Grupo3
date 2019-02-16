@@ -24,6 +24,8 @@ Route.post('/producto', 'ProductocontrolController.store')
 
 
 
+
+Route.on('/venta').render('venta/agregarproducto')
 /*
     Route.get('<ruta>',function(){})
     Route.get('<ruta>/<:id>',function({params}){})
