@@ -10,7 +10,7 @@ class PedidoSchema extends Schema {
       table.date('fecha').notNullable()
       table.integer('cantidad').notNullable()
       table.integer('cod_proveedor').unsigned().references('id').inTable('proveedor')
-      table.integer('cod_producto').unsigned().references('id').inTable('producto')
+      table.integer('cod_producto').unsigned().references('id').inTable('productos')
 
       table.timestamps()
     })

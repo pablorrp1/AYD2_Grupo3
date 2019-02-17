@@ -8,7 +8,7 @@ class DetalleVentaSchema extends Schema {
     this.create('detalle_ventas', (table) => {
       table.increments()
       table.integer('cantidad_ven').unsigned().notNullable()
-      table.integer('cod_producto').unsigned().references('id').inTable('producto')
+      table.integer('cod_producto').unsigned().references('id').inTable('productos')
       table.integer('cod_venta').unsigned().references('id').inTable('venta')
       table.timestamps()
     })
