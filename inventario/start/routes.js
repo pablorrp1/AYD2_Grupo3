@@ -18,14 +18,14 @@ const Route = use('Route')
 
 Route.on('/').render('home')
 
-Route.get('/producto/Agregar', 'ProductocontrolController.add')
+Route.get('/producto/agregar', 'ProductocontrolController.add')
 
 Route.post('/producto', 'ProductocontrolController.store')
 
 
 
 
-Route.on('/venta').render('venta/agregarproducto')
+Route.get('/venta/:id','VentaProductoController.index')
 /*
     Route.get('<ruta>',function(){})
     Route.get('<ruta>/<:id>',function({params}){})
