@@ -24,6 +24,7 @@ Route.post('/producto', 'ProductocontrolController.store')
 
 Route.on('/venta/crearventa').render('venta/crearventa')
 Route.get('/VentaControl0', 'VentaControl0Controller.index')
+Route.post('/venta', 'VentraControl0Controller.storeVenta')
 
 
 
