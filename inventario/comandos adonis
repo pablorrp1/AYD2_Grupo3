@@ -1,0 +1,16 @@
+AdonisJS
+
+-- crea una vista
+adonis make:view <nombre>
+
+-- crea una vista dentro de carpeta
+adonis make:view <nombre>/<nombre>
+
+-- crea un controlador
+adonis make:controller <nombre>
+
+-- crea una migracion (tabla)
+adonis make:migration <nombre>
+
+-- correr migracion
+adonis migration:run

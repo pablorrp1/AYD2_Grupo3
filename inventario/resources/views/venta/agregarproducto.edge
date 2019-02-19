@@ -1,0 +1,33 @@
+@layout('main')
+
+@section('titulo')
+Agregue producto a su venta
+@endsection
+
+@section('contenido')
+    <p>
+        <h2>Agregue productos a la venta </h2>
+            <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">Producto</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Cantidad</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        @each(prod in prods)
+                            <tr>
+                                <td>{{ prod.nombre }}</td>
+                                <td>{{ prod.precio }}</td>
+                                <td>
+                                    <input type="number" min="0" id="cantidad">
+                                </td>
+                            </tr>
+                        @endeach
+                    </tbody>
+                  </table>
+                  <button type="submit" class="btn btn-primary">Agregar</button>
+    </p>
+
+@endsection

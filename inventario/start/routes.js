@@ -16,4 +16,18 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
-Route.on('/').render('welcome')
+Route.on('/').render('home')
+
+Route.get('/producto/agregar', 'ProductocontrolController.add')
+
+Route.post('/producto', 'ProductocontrolController.store')
+
+
+
+
+Route.get('/venta/:id','VentaProductoController.index')
+/*
+    Route.get('<ruta>',function(){})
+    Route.get('<ruta>/<:id>',function({params}){})
+    Route.get('<ruta>','<controlador>.<funcion>')
+*/
