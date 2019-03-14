@@ -22,7 +22,7 @@ async store({request, response, session}){
     
     session.flash({ notification: 'Producto Agregado con exito '})
     
-    return response.redirect('/')
+    return response.redirect('home')
     
     }
     

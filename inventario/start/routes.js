@@ -18,6 +18,8 @@ const Route = use('Route')
 
 Route.on('/').render('home')
 
+Route.on('/home').render('Menu_admin')
+
 Route.on('/venta/crearventa').render('venta/crearventa')
 Route.get('/VentaControl0', 'VentaControl0Controller.index')
 Route.post('/venta', 'VentraControl0Controller.storeVenta')
@@ -29,6 +31,12 @@ Route.post('/producto', 'ProductocontrolController.store')
 
 Route.get('register','Auth/RegisterController.showRegisterForm')
 Route.post('register', 'Auth/RegisterController.register').as('register')
+
+Route.get('login','Auth/LoginController.showLoginForm')
+Route.post('login', 'Auth/LoginController.login').as('login')
+
+Route.get('logout', 'Auth/AuthenticatedController.logout')
+
 /*
     Route.get('<ruta>',function(){})
     Route.get('<ruta>/<:id>',function({params}){})
