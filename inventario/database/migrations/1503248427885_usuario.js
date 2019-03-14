@@ -11,6 +11,7 @@ class UsuarioSchema extends Schema {
       table.string('usuario', 80).notNullable().unique()
       table.string('email', 254).notNullable().unique()
       table.string('password', 60).notNullable()
+      table.boolean('activo').defaultTo(0)
       table.timestamps()
     })
   }
