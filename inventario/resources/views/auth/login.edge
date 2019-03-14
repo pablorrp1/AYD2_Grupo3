@@ -1,0 +1,52 @@
+
+@layout('main')
+
+@section('contenido')
+<div class="columns">
+    <div class="column is-4 is-offset-4">
+        <h2 class="title has-text.centered">Ingresar</h2>
+
+        @include('includes.notification')
+    <form action="{{route('login')}}" method="POST">
+            {{csrfField()}}
+  
+        
+        
+        <div class="field">
+            <label class="label">Usuario</label>
+            <div class="control">
+            <input 
+            type="text" 
+            class="input" 
+            name="username"  >
+
+            </div>
+           
+        </div>
+
+
+            <div class="field">
+                    <label class="label">Contraseña</label>
+                    <div class="control">
+                    <input 
+                    type="password" 
+                    class="input" 
+                    name="password"    >
+        
+                    </div>
+                   
+                </div>
+                <div class="field">
+                    <label class="checkbox">
+                        <input type="checkbox" name ="remember">
+                        Recuerdame 
+                    </label>
+                </div>
+                <div class="control">
+                    <button type="submit" class="button is-dark is-fullwidth is-uppercase">Ingresar</button>
+                    
+                </div>
+    </form>
+    </div>
+</div>
+@endsection
