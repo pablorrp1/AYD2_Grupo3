@@ -1,11 +1,17 @@
 @layout('main')
 
 @section('titulo')
-Bienvenido
+<h1>Agregar Producto</h1>
 @endsection
 
+
+
+
 @section('contenido')
-    <h1>Agregar Producto</h1>
+
+
+
+   
     <form action="/producto" method="POST">
         {{csrfField()}}
         <div class ="form-group">

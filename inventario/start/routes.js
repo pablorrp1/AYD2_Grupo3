@@ -16,7 +16,7 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
-Route.on('/').render('home')
+Route.on("/").render("/auth/login");
 
 Route.on('/home').render('Menu_admin')
 

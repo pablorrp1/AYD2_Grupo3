@@ -1,7 +1,17 @@
 
-@layout('main')
-
+@layout('app')
 @section('contenido')
+    <div class="logo"></div>
+   <center> <h2>Bienvenido usuario! </h2> <center>
+    <center><img src="inventarios.png"width="380" height="370" ></center>
+    
+    <p>
+    <center>Ingresa para poder trabajar en tu inventario </center>
+
+@endsection
+
+
+@section('logear')
 <div class="columns">
     <div class="column is-4 is-offset-4">
         <h2 class="title has-text.centered">Ingresar</h2>
@@ -49,4 +59,5 @@
     </form>
     </div>
 </div>
+<br>
 @endsection
