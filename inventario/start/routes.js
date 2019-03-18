@@ -24,9 +24,8 @@ Route.on('/venta/crearventa').render('venta/crearventa')
 Route.get('/VentaControl0', 'VentaControl0Controller.index')
 Route.post('/venta', 'VentraControl0Controller.storeVenta')
 
-Route.get('/venta/:id','VentaProductoController.index')
+Route.get("/venta/:id", "VentaProductoController.index");
 Route.get('/producto/agregar', 'ProductocontrolController.add')
-
 Route.post('/producto', 'ProductocontrolController.store')
 
 Route.get('register','Auth/RegisterController.showRegisterForm')
@@ -36,6 +35,8 @@ Route.get('login','Auth/LoginController.showLoginForm')
 Route.post('login', 'Auth/LoginController.login').as('login')
 
 Route.get('logout', 'Auth/AuthenticatedController.logout')
+
+
 
 /*
     Route.get('<ruta>',function(){})
