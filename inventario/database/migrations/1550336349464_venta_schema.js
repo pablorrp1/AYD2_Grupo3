@@ -5,7 +5,7 @@ const Schema = use('Schema')
 
 class VentaSchema extends Schema {
   up () {
-    this.create('venta', (table) => {
+    this.create('ventas', (table) => {
       table.increments()
       table.date('fecha').notNullable()
       table.float('descuento')
@@ -14,7 +14,7 @@ class VentaSchema extends Schema {
   }
 
   down () {
-    this.drop('venta')
+    this.drop('ventas')
   }
 }
 

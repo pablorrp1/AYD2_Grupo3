@@ -14,7 +14,7 @@ class VentaControl0Controller {
 
         session.flash({ notification: 'Venta creada con exito, agregue los productos de la venta'})
         
-        return response.redirect('/venta/{id}')
+        return response.redirect('/venta/id')
     }
 
 

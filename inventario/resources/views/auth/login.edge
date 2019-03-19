@@ -1,9 +1,11 @@
 
 @layout('app')
 @section('contenido')
+
+
     <div class="logo"></div>
    <center> <h2>Bienvenido usuario! </h2> <center>
-    <center><img src="inventarios.png"width="380" height="370" ></center>
+    <center><img src="inventarios.png"width="250" height="240" ></center>
     
     <p>
     <center>Ingresa para poder trabajar en tu inventario </center>
@@ -28,7 +30,8 @@
             <input 
             type="text" 
             class="input" 
-            name="username"  >
+            name="username" 
+            placeholder="Usuario" >
 
             </div>
            
@@ -41,7 +44,8 @@
                     <input 
                     type="password" 
                     class="input" 
-                    name="password"    >
+                    name="password"   
+                    placeholder="Contraseña" >
         
                     </div>
                    
@@ -60,4 +64,97 @@
     </div>
 </div>
 <br>
+@endsection
+
+
+@section('contenido2')
+<div class="columns">
+    <div class="column is-4 is-offset-4">
+        <h2 class="title has-text.centered">Registrar</h2>
+
+        @include('includes.notification')
+    <form action="{{route('register')}}" method="POST">
+            {{csrfField()}}
+            <div class="field">
+                    <label class="label">Nombre</label>
+                    <div class="control">
+                    <input 
+                    type="text" 
+                    class="input    {{hasErrorFor('name') ? 'is-danger':''}}" 
+                    name="name"
+                    placeholder="Nombre"
+                    value="{{old('name','')}}"    >
+        
+                    </div>
+                    {{elIf('<span class="help is-danger">$self</span>', getErrorFor('name'),hasErrorFor('name'))}}
+                </div>        
+        
+        
+        <div class="field">
+            <label class="label">Usuario</label>
+            <div class="control">
+            <input 
+            type="text" 
+            class="input    {{hasErrorFor('username') ? 'is-danger':''}}" 
+            name="username"
+            placeholder="Usuario"
+            value="{{old('username','')}}"    >
+
+            </div>
+            {{elIf('<span class="help is-danger">$self</span>', getErrorFor('username'),hasErrorFor('username'))}}
+        </div>
+
+        <div class="field">
+                <label class="label">Email</label>
+                <div class="control">
+                <input 
+                type="email" 
+                class="input    {{hasErrorFor('email') ? 'is-danger':''}}" 
+                name="email"
+                placeholder="correo"
+                value="{{old('email','')}}"    >
+    
+                </div>
+                {{elIf('<span class="help is-danger">$self</span>', getErrorFor('email'),hasErrorFor('email'))}}
+            </div>
+            <div class="field">
+                    <label class="label">Contraseña</label>
+                    <div class="control">
+                    <input 
+                    type="password" 
+                    class="input    {{hasErrorFor('password') ? 'is-danger':''}}" 
+                    name="password"
+                    placeholder="Contraseña"
+                    value="{{old('username','')}}"    >
+        
+                    </div>
+                    {{elIf('<span class="help is-danger">$self</span>', getErrorFor('password'),hasErrorFor('password'))}}
+                </div>
+                            <div class="field">
+                    <label class="label">Confirmar contraseña</label>
+                    <div class="control">
+                    <input 
+                    type="password" 
+                    class="input    {{hasErrorFor('password') ? 'is-danger':''}}" 
+                    name="password2"
+                    placeholder="Confirma contraseña"
+                    value="{{old('username','')}}"    >
+        
+                    </div>
+                    {{elIf('<span class="help is-danger">$self</span>', getErrorFor('password'),hasErrorFor('password'))}}
+                </div>
+                <br>
+                
+                <div class="control"role="alert">
+                    <button type="submit" class="button is-dark is-fullwidth is-uppercase">Registrar</button> 
+                        
+                </div>
+
+
+                
+    </form>
+    </div>
+</div>
+
+
 @endsection

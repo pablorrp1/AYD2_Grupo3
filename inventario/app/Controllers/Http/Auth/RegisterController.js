@@ -22,6 +22,11 @@ return view.render('auth.register')
 
 
     })
+    if (validation.fails()){
+
+        session.withErrors(validation.messages()).flashExcept(['password'])
+        return response.redirect('back')
+    }
 
 
 
@@ -32,6 +37,7 @@ return view.render('auth.register')
             password: request.input('password'),
             
         })
+       
         return response.redirect('back')
     }
     }

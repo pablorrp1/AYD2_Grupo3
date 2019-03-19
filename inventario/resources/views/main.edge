@@ -21,7 +21,7 @@
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
       <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="/home">Inventario</a>
       <p style="color:#ffffff";> 
-        Bienvenido Usuario: {{auth.user.usuario}}
+        Bienvenido Usuario: {{auth.user.nombre}}
       </p>
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
@@ -66,18 +66,19 @@
                   Detalle Venta
                 </a>
               </li>
+               <li class="nav-item">
+                <a class="nav-link" href="/venta/retirar">
+                  <span data-feather="users"></span>
+                  Retirar producto
+                </a>
+              </li>
               <li class="nav-item">
                 <a class="nav-link" href="/producto/agregar">
                   <span data-feather="shopping-cart"></span>
                   Productos
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/venta/retirar">
-                  <span data-feather="users"></span>
-                  Retirar producto
-                </a>
-              </li>
+
               <li class="nav-item">
                 <a class="nav-link" href="#">
                   <span data-feather="bar-chart-2"></span>
@@ -156,8 +157,14 @@
 
          
         </main>
+
+        
       </div>
     </div>
+
+
+
+    
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

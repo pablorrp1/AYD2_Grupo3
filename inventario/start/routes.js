@@ -22,9 +22,10 @@ Route.on('/home').render('Menu_admin')
 
 Route.on('/venta/crearventa').render('venta/crearventa')
 Route.get('/VentaControl0', 'VentaControl0Controller.index')
-Route.post('/venta', 'VentraControl0Controller.storeVenta')
+Route.post('/venta', 'VentaControl0Controller.storeVenta')
 
-Route.get("/venta/:id", "VentaProductoController.index");
+Route.get("/venta/:id", "VentaProductoController.index")
+    
 Route.get('/producto/agregar', 'ProductocontrolController.add')
 Route.post('/producto', 'ProductocontrolController.store')
 
