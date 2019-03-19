@@ -1,18 +1,20 @@
 @layout('main')
 
 @section('titulo')
-Agregue producto a su venta
+Retire producto de bodega
 @endsection
 
 @section('contenido')
+
     <p>
-        <h2>Agregue productos a la venta </h2>
+        <h2>Productos en bodega </h2>
             <table class="table table-striped">
                     <thead>
                       <tr>
                         <th scope="col">Producto</th>
                         <th scope="col">Precio</th>
                         <th scope="col">Cantidad</th>
+                        <th scope="col">Retirar</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -20,8 +22,9 @@ Agregue producto a su venta
                             <tr>
                                 <td>{{ prod.nombre }}</td>
                                 <td>{{ prod.precio }}</td>
+                                <td>{{ prod.cantidad }}</td>
                                 <td>
-                                    <input type="number" min="0" id="cantidad">
+                                    <input type="number" min="0" max={{prod.cantidad}} id="cantidad">
                                 </td>
                             </tr>
                         @endeach
