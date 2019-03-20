@@ -1,0 +1,37 @@
+@layout('main')
+
+@section('titulo')
+<h1>Agregar Proveedor</h1>
+@endsection
+
+@section('contenido')
+    
+<form action="/proveedor" method="POST">
+    {{csrfField()}}
+    <div class ="form-group">
+        <label>Nombre de Proveedor </label>
+        <input type ="text" name="producto" class="form-control" placeholder="Nombre de Proveedor">
+    </div>
+    
+    <div class ="form-group">
+        <label>Direccion </label>
+        <textarea name="descripcion" class="form-control" placeholder="Ciudad, Guatemala"></textarea>
+    </div>
+    <div class ="form-group">
+        <label>Teléfono </label>
+        <input type ="text" name="cantidad" class="form-control" placeholder="12341234">
+    </div>
+    <div class ="form-group">
+        <label>Correo Electrónico </label>
+        <input type ="text" name="precio" class="form-control" placeholder="micorreo@electroncio.com">
+    </div>
+    <div class ="form-group">
+        <label>Código Usuario</label>
+        <input type ="text" name="proveedor" class="form-control" placeholder="1234">
+    </div>
+
+    <button class="btn btn-primary" type="submit"> 
+        Agregar
+    </button>
+</form>
+@endsection
