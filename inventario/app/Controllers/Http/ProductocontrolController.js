@@ -9,13 +9,13 @@ class ProductocontrolController {
     producto:producto.toJSON()
 }
 
-async store({request, response, session}){
+async store({request, response, session,auth}){
     const post = new Producto();
     post.nombre =request.input('producto')
     post.descripcion =request.input('descripcion')
     post.cantidad =request.input('cantidad')
     post.precio =request.input('precio')
-    post.cod_usuario = request.input('1')
+    post.cod_usuario = auth.user.id
     post.created_at  =request.input('proveedor')
     
     await post.save()
