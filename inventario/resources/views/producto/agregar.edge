@@ -35,8 +35,15 @@
         </div>
         <div class ="form-group">
             <label>Proveedor</label>
-            <input type ="text" name="proveedor" class="form-control" placeholder="Proveedor">
+            <!--<input type ="text" name="proveedor" class="form-control" placeholder="Proveedor">-->
+            <select class="form-control" name="proveedor">
+                <option selected>Escoge...</option>
+                @each(prov in provs)
+                    <option value="{{prov.id}}">{{prov.nombre}}</option>
+                @endeach
+            </select>
         </div>
+
 
 
 
