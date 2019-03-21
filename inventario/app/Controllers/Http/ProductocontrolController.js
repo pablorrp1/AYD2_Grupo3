@@ -1,7 +1,23 @@
 'use strict'
-
+const Database = use('Database')
 const Producto = use('App/Models/Producto')
 class ProductocontrolController {
+
+    async index({auth, params, view}){
+        const prods = await Database.from('productos').where('cod_usuario', auth.user.id)
+        return view.render('producto.lista',{
+            prods : prods
+        })
+    }
+
+    async retiro({params, view}){
+        //console.log("en retiro")
+        const prod = await Producto.find(params.id)
+
+        return view.render('producto.retirar',{
+            prod
+        })
+    }
 
     async add({view}){
     return view.render('producto.agregar')
