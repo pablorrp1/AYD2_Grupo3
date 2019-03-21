@@ -39,6 +39,7 @@ Route.get('logout', 'Auth/AuthenticatedController.logout')
 
 // proveedores
 Route.get('/proveedor/agregar', 'ProveedoreController.add')
+Route.get('/proveedor/infop', 'ProveedoresIController.viewp')
 
 
 /*
