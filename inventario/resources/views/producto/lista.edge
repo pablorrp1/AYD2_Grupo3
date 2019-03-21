@@ -1,0 +1,32 @@
+@layout('main')
+
+@section('titulo')
+<h2>Productos en bodega </h2>
+@endsection
+
+@section('contenido')
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Producto</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Cantidad actual</th>
+                <th>Accion</th>
+            </tr>
+        </thead>
+        <tbody>
+            @each(prod in prods)
+            <tr>
+                <td>{{ prod.nombre }}</td>
+                <td>{{ prod.descripcion }}</td>
+                <td>{{ prod.precio }}</td>
+                <td>{{ prod.cantidad }}</td>
+                <td>
+                <a href="/producto/{{prod.id}}/retiro" class="btn btn-primary" role="button">Retirar</a>
+                </td>
+            </tr>
+            @endeach
+        </tbody>
+    </table>
+@endsection

@@ -24,7 +24,11 @@ Route.on('/venta/crearventa').render('venta/crearventa')
 Route.get('/VentaControl0', 'VentaControl0Controller.index')
 Route.post('/venta', 'VentaControl0Controller.storeVenta')
 
-Route.get("/venta/:id", "VentaProductoController.index")
+Route.get("/productos","ProductocontrolController.index")
+
+Route.get("/producto/:id/retiro", "ProductocontrolController.retiro")
+Route.put("/retiro/:id","VentaProductoController.store")
+Route.get("/retiro","VentaProductoController.index")
     
 Route.get('/producto/agregar', 'ProductocontrolController.add')
 Route.post('/producto', 'ProductocontrolController.store')
