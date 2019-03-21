@@ -1,8 +1,8 @@
 'use strict'
 const Database = use('Database')
 const Producto = use('App/Models/Producto')
-class ProductocontrolController {
 
+class ProductocontrolController{
     async index({auth, params, view}){
         const prods = await Database
             .table('productos')
@@ -52,9 +52,8 @@ async store({request, response, session,auth}){
     session.flash({ notification: 'Producto Agregado con exito '})
     
     return response.redirect('/producto/agregar')
-    
+
     }
-    
 }
 
 module.exports = ProductocontrolController
