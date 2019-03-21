@@ -23,7 +23,7 @@ class ProveedoresIController {
 
         await provee.save()
         session.flash({ notification: 'El Proveedor ha sido agregado con éxito!' })
-        return response.redirect('home')
+        return response.redirect('/proveedor/infop')
 
     }
 }
