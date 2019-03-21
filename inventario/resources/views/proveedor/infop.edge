@@ -5,17 +5,17 @@
 @endsection
 
 @section('contenido')
-    
-<form action="/proveedor" method="POST">
-    <table>
+    <table class="table table-striped">
         <tr>
+            <th>ID</th>
             <th>Nombre</th>
             <th>Dirección</th>
             <th>Teléfono</th>
             <th>Correo Electrónico</th>
         </tr>
-        @each(provee in proveedor)
+        @each(provee in proveedores)
         <tr>
+            <td>provee.id</td>
             <td>provee.nombre</td>
             <td>provee.direccion</td>
             <td>provee.telefono</td>
@@ -23,9 +23,4 @@
         </tr>
         @endeach
     </table>
-    
-
-
-
-</form>
 @endsection
