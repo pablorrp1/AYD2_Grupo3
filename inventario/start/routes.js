@@ -41,6 +41,10 @@ Route.post('login', 'Auth/LoginController.login').as('login')
 
 Route.get('logout', 'Auth/AuthenticatedController.logout')
 
+// proveedores
+Route.get('/proveedor/infop', 'ProveedoresIController.viewp')
+Route.get('/proveedor/agregar', 'ProveedoresIController.add')
+Route.post('proveedor', 'ProveedoresIController.store')
 
 
 /*

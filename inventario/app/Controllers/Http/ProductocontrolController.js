@@ -1,7 +1,6 @@
 'use strict'
 const Database = use('Database')
 const Producto = use('App/Models/Producto')
-class ProductocontrolController {
 
     async index({auth, params, view}){
         const prods = await Database.from('productos').where('cod_usuario', auth.user.id)
@@ -20,10 +19,10 @@ class ProductocontrolController {
     }
 
     async add({view}){
-    return view.render('producto.agregar')
-    const Producto = await Producto.all();
-    producto:producto.toJSON()
-}
+        return view.render('producto.agregar')
+        const Producto = await Producto.all();
+        producto:producto.toJSON()
+    }
 
 async store({request, response, session,auth}){
     const post = new Producto();
@@ -39,9 +38,7 @@ async store({request, response, session,auth}){
     session.flash({ notification: 'Producto Agregado con exito '})
     
     return response.redirect('home')
-    
     }
-    
 }
 
 module.exports = ProductocontrolController
