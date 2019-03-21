@@ -9,24 +9,24 @@
 <form action="/proveedor" method="POST">
     {{csrfField()}}
     <div class ="form-group">
-        <label>Nombre de Proveedor </label>
-        <input type ="text" name="producto" class="form-control" placeholder="Nombre de Proveedor">
+        <label><strong>Nombre de Proveedor</strong></label>
+        <input type ="text" name="p_nombre" class="form-control" placeholder="Nombre de Proveedor">
     </div>
     
     <div class ="form-group">
-        <label>Direccion </label>
-        <textarea name="descripcion" class="form-control" placeholder="Ciudad, Guatemala"></textarea>
+        <label><strong>Direccion</strong></label>
+        <textarea name="p_direccion" class="form-control" placeholder="Ciudad, Guatemala"></textarea>
     </div>
     <div class ="form-group">
-        <label>Teléfono </label>
-        <input type ="text" name="cantidad" class="form-control" placeholder="12341234">
+        <label><strong>Teléfono</strong></label>
+        <input type ="text" name="p_telefono" class="form-control" placeholder="12341234">
     </div>
     <div class ="form-group">
-        <label>Correo Electrónico </label>
-        <input type ="text" name="precio" class="form-control" placeholder="micorreo@electroncio.com">
+        <label><strong>Correo Electrónico</strong></label>
+        <input type ="text" name="p_email" class="form-control" placeholder="micorreo@electroncio.com">
     </div>
-    <div class ="form-group">
-        <label>Código Usuario: </label>
+    <div>
+        <label><strong>Código Usuario:</strong></label>
         {{ auth.user.id }}
     </div>
 
