@@ -1,0 +1,26 @@
+@layout('main')
+
+@section('titulo')
+<h2>Historial de productos retirados del inventario </h2>
+@endsection
+
+@section('contenido')
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Producto</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Hora y Fecha</th>
+            </tr>
+        </thead>
+        <tbody>
+            @each(prod in prods)
+            <tr>
+                <td>{{ prod.nombre }}</td>
+                <td>{{ prod.cantidad_ven }}</td>
+                <td>{{ prod.date }}</td>
+            </tr>
+            @endeach
+        </tbody>
+    </table>
+@endsection

@@ -1,11 +1,20 @@
 @layout('main')
 
 @section('titulo')
-<h1>Retirar Producto</h1>
+<h2>Retirar {{prod.nombre}}</h2>
 @endsection
 
- 
-
-
 @section('contenido')
+    <form action="{{'/retiro/'+prod.id+'?_method=PUT'}}" method="POST">
+        {{ csrfField() }}
+        <div class="form-group">
+            <label for="">Cantidad a retirar</label>
+            <br>
+            <label for="">Existen {{ prod.cantidad }} en bodega</label>
+            <br>
+            <input type="number" min="0" max={{prod.cantidad}} name="retiro" placeholder="0">
+        </div>
+        <button type="submit" class="btn btn-primary">Retirar</button>
+    </form>
+
 @endsection
