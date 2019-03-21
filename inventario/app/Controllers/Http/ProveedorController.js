@@ -1,12 +1,18 @@
 'use strict'
 
+const Database = use('Database')
 const Proveedor = use('App/Models/Proveedor')
 
-class ProveedoresIController {
-    async viewp ({ view }){
-        return view.render('proveedor.infop')
-        const proveedores = await Proveedor.all();
-        proveedores: proveedores.toJSON()
+class ProveedorController {
+    async viewp ({ view,auth }){
+        const proveedores = await Database
+            .table('proveedors')
+            .select('*')
+            .where('cod_usuario', auth.user.id)
+        
+        return view.render('proveedor.infop',{
+            proveedores:proveedores
+        })
     }
 
     async add ({ view }){
@@ -28,4 +34,4 @@ class ProveedoresIController {
     }
 }
 
-module.exports = ProveedoresIController
+module.exports = ProveedorController
