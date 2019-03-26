@@ -20,9 +20,9 @@ const Route = use('Route')
 
 Route.on('/').render('Menu_admin')
 
-Route.on('/venta/crearventa').render('venta/crearventa')
-Route.get('/VentaControl0', 'VentaControl0Controller.index')
-Route.post('/venta', 'VentaControl0Controller.storeVenta')
+//Route.on('/venta/crearventa').render('venta/crearventa')
+//Route.get('/VentaControl0', 'VentaControl0Controller.index')
+//Route.post('/venta', 'VentaControl0Controller.storeVenta')
 
 Route.get("/productos","ProductocontrolController.index")
 

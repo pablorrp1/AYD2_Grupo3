@@ -19,7 +19,7 @@ class ProveedorController {
         return view.render('proveedor.agregar')
     }
 
-    async store({ request, response, session, auth }) {
+    async store({ request, response}) {
         const provee = new Proveedor();
         provee.nombre = request.input('p_nombre')
         provee.direccion = request.input('p_direccion')
@@ -28,7 +28,6 @@ class ProveedorController {
         provee.cod_usuario = 7
 
         await provee.save()
-        session.flash({ notification: 'El Proveedor ha sido agregado con éxito!' })
         return response.redirect('/proveedor/infop')
 
     }

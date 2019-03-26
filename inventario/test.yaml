@@ -3,7 +3,7 @@ config:
   tls:
     rejectUnauthorized: false
   phases:
-    - duration: 5
+    - duration: 600
       arrivalRate: 10
 scenarios:
   - flow:
@@ -14,7 +14,24 @@ scenarios:
     - get:
         url: "/retiros"
     - put:
-        url: "/retiro/18"
+        url: "/retiro/{{$randomNumber(1,20)}}"
         followRedirect: false
         formData:
-          retiro : 1
+          retiro : "{{$randomNumber(1,5)}}"
+    - post:
+        url: "/producto"
+        followRedirect: false
+        formData:
+          producto : "Test{{$randomNumber(1,5)}}"
+          descripcion : "Test{{$randomNumber(1,5)}}"
+          cantidad : "{{$randomNumber(1,10000)}}"
+          precio : "{{$randomNumber(1,10)}}"
+          proveedor : "{{$randomNumber(1,7)}}"
+    - post:
+        url: "/proveedor"
+        followRedirect: false
+        formData:
+          p_nombre : "Proveedor{{$randomNumber(1,5)}}"
+          p_direccion : "Direccion{{$randomNumber(1,5)}}"
+          p_telefono : "{{$randomNumber(1,100)}}"
+          p_email : "{{$randomString()}}"
