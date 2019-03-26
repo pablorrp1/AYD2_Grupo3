@@ -1,0 +1,20 @@
+config:
+  target: "http://0.0.0.0:3333"
+  tls:
+    rejectUnauthorized: false
+  phases:
+    - duration: 5
+      arrivalRate: 10
+scenarios:
+  - flow:
+    - get:
+        url: "/productos"
+    - get:
+        url: "/proveedor/infop"
+    - get:
+        url: "/retiros"
+    - put:
+        url: "/retiro/18"
+        followRedirect: false
+        formData:
+          retiro : 1

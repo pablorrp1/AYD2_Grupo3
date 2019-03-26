@@ -16,9 +16,9 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
-Route.on("/").render("/auth/login");
+//Route.on("/").render("/auth/login");
 
-Route.on('/home').render('Menu_admin')
+Route.on('/').render('Menu_admin')
 
 Route.on('/venta/crearventa').render('venta/crearventa')
 Route.get('/VentaControl0', 'VentaControl0Controller.index')
@@ -28,7 +28,7 @@ Route.get("/productos","ProductocontrolController.index")
 
 Route.get("/producto/:id/retiro", "ProductocontrolController.retiro")
 Route.put("/retiro/:id","VentaProductoController.store")
-Route.get("/retiro","VentaProductoController.index")
+Route.get("/retiros","VentaProductoController.index")
     
 Route.get('/producto/agregar', 'ProductocontrolController.add')
 Route.post('/producto', 'ProductocontrolController.store')

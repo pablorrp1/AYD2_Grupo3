@@ -16,7 +16,7 @@ class VentaProductoController {
             .select(Database.raw('DATE_FORMAT(detalle_ventas.created_at, "%H:%i %d/%m/%Y") as date'))
             //.select('detalle_ventas.created_at as date')
             .innerJoin('detalle_ventas','productos.id','detalle_ventas.cod_producto')
-            .where('cod_usuario', auth.user.id)
+            .where('cod_usuario', 7)
             .orderBy('date','asc')
         return view.render('producto.listaretiros',{
             prods : prods

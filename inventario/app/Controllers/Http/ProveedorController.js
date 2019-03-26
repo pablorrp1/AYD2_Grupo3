@@ -8,7 +8,7 @@ class ProveedorController {
         const proveedores = await Database
             .table('proveedors')
             .select('*')
-            .where('cod_usuario', auth.user.id)
+            .where('cod_usuario', 7)
         
         return view.render('proveedor.infop',{
             proveedores:proveedores
@@ -25,7 +25,7 @@ class ProveedorController {
         provee.direccion = request.input('p_direccion')
         provee.telefono = request.input('p_telefono')
         provee.email = request.input('p_email')
-        provee.cod_usuario = auth.user.id
+        provee.cod_usuario = 7
 
         await provee.save()
         session.flash({ notification: 'El Proveedor ha sido agregado con éxito!' })

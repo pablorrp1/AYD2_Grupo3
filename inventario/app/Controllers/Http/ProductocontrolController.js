@@ -3,17 +3,18 @@ const Database = use('Database')
 const Producto = use('App/Models/Producto')
 
 class ProductocontrolController{
-    async index({auth, params, view}){
+    async index({view}){
         const prods = await Database
             .table('productos')
             .select('productos.nombre')
             .select('productos.descripcion')
             .select('productos.precio')
             .select('productos.cantidad')
+            .select('productos.id')
             //.select('productos.cod_proveedor')
             .select('proveedors.nombre as prov')
             .innerJoin('proveedors','productos.cod_proveedor','proveedors.id')
-            .where('productos.cod_usuario', auth.user.id)
+            .where('productos.cod_usuario', 7)
         //console.log(prods)
             return view.render('producto.lista',{
             prods : prods
@@ -30,7 +31,7 @@ class ProductocontrolController{
     }
 
     async add({view, auth}){
-    const provs = await Database.from('proveedors').where('cod_usuario', auth.user.id)
+    const provs = await Database.from('proveedors').where('cod_usuario', 7)
     return view.render('producto.agregar',{
         provs : provs
     })
@@ -38,19 +39,17 @@ class ProductocontrolController{
     producto:producto.toJSON()
 }
 
-async store({request, response, session,auth}){
+async store({request, response}){
     const post = new Producto();
     post.nombre =request.input('producto')
     post.descripcion =request.input('descripcion')
     post.cantidad =request.input('cantidad')
     post.precio =request.input('precio')
-    post.cod_usuario = auth.user.id
+    post.cod_usuario = 7
     post.cod_proveedor  =request.input('proveedor')
 
     await post.save()
-    
-    session.flash({ notification: 'Producto Agregado con exito '})
-    
+        
     return response.redirect('/producto/agregar')
 
     }
