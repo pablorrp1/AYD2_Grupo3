@@ -11,6 +11,7 @@ class ProductocontrolController{
             .select('productos.precio')
             .select('productos.cantidad')
             //.select('productos.cod_proveedor')
+            .select('productos.id')
             .select('proveedors.nombre as prov')
             .innerJoin('proveedors','productos.cod_proveedor','proveedors.id')
             .where('productos.cod_usuario', auth.user.id)

@@ -14,6 +14,11 @@
     @include('includes/navbar')
 
     <main role="main" >
+        @if(flashMessage('notification'))
+          <div class="alert alert-{{ flashMessage('notification.type') }}">
+            {{ flashMessage('notification.message') }}
+          </div>
+        @endif
         <table class="table">
            <tr>
              <th scope="col">

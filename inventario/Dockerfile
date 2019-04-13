@@ -1,5 +1,5 @@
 # 1. Ultima version de la imagen de node
-FROM node:8.15.1-alpine 
+FROM node:8.15.1-jessie-slim
 
 # 2. Directorio de trabajo
 WORKDIR /app
@@ -15,6 +15,10 @@ ADD package.json /app
 
 # 6. Instalar dependencias
 RUN npm install
+
+RUN npm i -g @adonisjs/cli
+
+RUN npm i mysql
 
 # 7. Copiar el resto en el directorio
 COPY . /app
