@@ -3,12 +3,8 @@
 const User = use("App/Models/User");
 const Hash = use("Hash");
 class LoginController {
-  showLoginForm({ view }) {
-    return view.render("/");
-  }
-
   async login({ request, auth, session, response }) {
-    const { username, password, remember } = request.all();
+    const { username, pass, remember } = request.all();
 
     const user = await User.query()
       .where("usuario ", username)
@@ -16,7 +12,7 @@ class LoginController {
 
     // verificar contraseña
     if (user) {
-      const passwordVerified = await Hash.verify(password, user.password);
+      const passwordVerified = await Hash.verify(pass, user.password);
 
       if (passwordVerified) {
         await auth.remember(!!remember).login(user);

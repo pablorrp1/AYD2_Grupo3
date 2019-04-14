@@ -33,10 +33,8 @@ Route.get("/retiro","VentaProductoController.index")
 Route.get('/producto/agregar', 'ProductocontrolController.add')
 Route.post('/producto', 'ProductocontrolController.store')
 
-Route.get('register','Auth/RegisterController.showRegisterForm')
 Route.post('register', 'Auth/RegisterController.register').as('register')
 
-Route.get('login','Auth/LoginController.showLoginForm')
 Route.post('login', 'Auth/LoginController.login').as('login')
 
 Route.get('logout', 'Auth/AuthenticatedController.logout')
