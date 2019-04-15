@@ -3,7 +3,8 @@ const Database = use("Database");
 const Producto = use("App/Models/Producto");
 
 class ProductocontrolController {
-  async index({ auth, params, view }) {
+  async index({ request, auth, params, view }) {
+    const page = request.get().page || 1
     const prods = await Database.table("productos")
       .select("productos.nombre")
       .select("productos.descripcion")
@@ -13,7 +14,8 @@ class ProductocontrolController {
       .select("productos.id")
       .select("proveedors.nombre as prov")
       .innerJoin("proveedors", "productos.cod_proveedor", "proveedors.id")
-      .where("productos.cod_usuario", auth.user.id);
+      .where("productos.cod_usuario", auth.user.id)
+      .paginate(page,20);
     //console.log(prods)
     return view.render("producto.lista", {
       prods: prods

@@ -17,7 +17,7 @@
             </tr>
         </thead>
         <tbody>
-            @each(prod in prods)
+            @each(prod in prods.data)
             <tr>
                 <td>{{ prod.nombre }}</td>
                 <td>{{ prod.descripcion }}</td>
@@ -31,4 +31,8 @@
             @endeach
         </tbody>
     </table>
+    @if(prods.data.length)
+        <hr>
+        @!component('includes.pagination', pagination = prods, request = request, presenter = 'PaginationPresenter')
+    @endif
 @endsection
