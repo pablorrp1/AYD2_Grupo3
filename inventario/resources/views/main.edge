@@ -12,44 +12,40 @@
   </head>
 
   <body>
-    @include('includes/navbar')
-
-    <div class="container-fluid">
-      <div class="row">
-        @include('includes/sidebar')
-
-      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-        @if(flashMessage('notification'))
-          <div class="alert alert-{{ flashMessage('notification.type') }}">
-            {{ flashMessage('notification.message') }}
-          </div>
-        @endif
-        
-        <br>
-        <div class="card m-2">
-          <div class="card-header">
-              @!section('titulo')  
-          </div>
-          <div class="card-body">
-              @!section('contenido')
+    <div class="wrapper">
+      @include('includes/sidebar')
+      <div id="content">
+          @include('includes/navbar')
+          <div class="container-fluid">
+            @if(flashMessage('notification'))
+              <div class="alert alert-{{ flashMessage('notification.type') }}">
+                {{ flashMessage('notification.message') }}
+              </div>
+            @endif
+            <br>
+            <div class="card">
+              <div class="card-header">
+                @!section('titulo')  
+              </div>
+              <div class="card-body">
+                @!section('contenido')
+              </div>
+            </div>
           </div>
         </div>
-        </main>
       </div>
     </div>
-
-
-
-    
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    {{ script('jquery-3.3.1.slim.min.js') }}
-    {{ script('bootstrap.min.js') }}
+    {{ script('jquery-3.3.1.slim.min') }}
+    {{ script('bootstrap.min') }}
+    {{ script('sidebar') }}
 
+    
     <!-- Icons -->
-    {{ script('feather.min.js') }}
+    {{ script('feather.min') }}
     <script>
       feather.replace()
     </script>

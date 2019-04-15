@@ -1,87 +1,67 @@
-<nav class="col-md-2 d-none d-md-block bg-light sidebar">
-    <div class="sidebar-sticky">
-        <ul class="nav flex-column">
-            <li class="nav-item">
-              <a class="nav-link active" href="/home">
-                <span data-feather="home"></span>
-                Inicio <span class="sr-only"></span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="">
-                <span data-feather="scissors"></span>
-                Agregar descuento
-              </a>
-            </li>
-             <li class="nav-item">
-              <a class="nav-link" href="/productos">
-                <span data-feather="book-open"></span>
-                Inventario
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/producto/agregar">
-                <span data-feather="shopping-cart"></span>
-                Agregar Producto
-              </a>
-            </li>
+<nav id="sidebar">
+  <div class="sidebar-header">
+      <h3>Inventario</h3>
+      <strong>I</strong>
+  </div>
 
-            <li class="nav-item">
-              <a class="nav-link" href="/retiro">
-                <span data-feather="bar-chart-2"></span>
-                Historial de retiro de inventario
-              </a>
-            </li>
-
-            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-                <span>Proveedores</span>
-              </h6>
-              <li class="nav-item">
-                <a class="nav-link" href="/proveedor/infop">
-                  <span data-feather="file-text"></span>
-                  Información
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/proveedor/agregar">
-                  <span data-feather="users"></span>
-                  Agregar
-                </a>
-              </li>
-          </ul>
-
-        <!--
-        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-        <span>Saved reports</span>
-        <a class="d-flex align-items-center text-muted" href="#">
-            <span data-feather="plus-circle"></span>
-        </a>
-        </h6>
-        <ul class="nav flex-column mb-2">
-        <li class="nav-item">
-            <a class="nav-link" href="#">
-            <span data-feather="file-text"></span>
-            Current month
-            </a>
+  <ul class="list-unstyled components">
+    <li>
+      <a href="/home">
+        <span data-feather="home"></span>
+        Inicio <span class="sr-only"></span>
+      </a>
+    </li>
+    <li>
+      <a class="disabled" href="#">
+        <span data-feather="scissors"></span>
+        Descuentos
+      </a>
+    </li>
+    <li>
+      <a href="#InventarioSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+        <span data-feather="package"></span>
+        Inventario
+      </a>
+      <ul class="collapse list-unstyled" id="InventarioSubmenu">
+        <li>
+          <a href="/productos">
+            <span data-feather="book"></span>
+            Productos
+          </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">
-            <span data-feather="file-text"></span>
-            Last quarter
-            </a>
+        <li>
+          <a href="/producto/agregar">
+            <span data-feather="plus"></span>
+            Agregar producto
+          </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">
+      </ul>
+    </li>
+    <li>
+      <a href="/retiro">
+        <span data-feather="truck"></span>
+        Retiros
+      </a>
+    </li>
+    <li>
+      <a href="#ProveedoresSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+        <span data-feather="package"></span>
+        Proveedores
+      </a>
+      <ul class="collapse list-unstyled" id="ProveedoresSubmenu">
+        <li>
+          <a href="/proveedor/infop">
             <span data-feather="file-text"></span>
-            Social engagement
-            </a>
+            Lista
+          </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">
-            <span data-feather="file-text"></span>
-            Year-end sale
-            </a>
+        <li>
+          <a href="/proveedor/agregar">
+            <span data-feather="plus"></span>
+            Agregar proveedor
+          </a>
         </li>
-        </ul>-->
-    </div>
+      </ul>
+    </li>
+  </ul>
 </nav>
