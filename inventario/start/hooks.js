@@ -14,4 +14,7 @@ View.global('appUrl', path =>{
     return path ?  `${APP_URL}/${path}` : APP_URL
 })
 
+View.global('range', (start, size) => {
+    return [...Array(size).keys()].map(i => i + start)
+  })
 })
