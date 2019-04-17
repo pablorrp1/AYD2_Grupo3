@@ -4,7 +4,7 @@ const Database = use("Database");
 const Proveedor = use("App/Models/Proveedor");
 
 class ProveedorController {
-async viewp({ request, view, auth }) {
+async index({ request, view, auth }) {
     const page = request.get().page || 1
 
     const proveedores = await Database
@@ -31,7 +31,7 @@ async store({ request, response, session, auth }) {
 
     await provee.save();
     session.flash({ notification: "El Proveedor ha sido agregado con éxito!" });
-    return response.redirect("/proveedor/infop");
+    return response.redirect("/proveedor/lista");
 }
 }
 

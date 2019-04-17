@@ -10,6 +10,7 @@ class DescuentosSchema extends Schema {
       table.date('fecha_final').notNullable()
       table.boolean('activo').defaultTo(false).notNullable()
       table.float('descuento').notNullable()
+      table.integer('cod_usuario').unsigned().references('id').inTable('users')
       table.timestamps()
     })
   }

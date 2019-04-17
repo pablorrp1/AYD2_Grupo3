@@ -16,7 +16,7 @@ class LoginController {
 
       if (passwordVerified) {
         await auth.remember(!!remember).login(user);
-        return response.route("home");
+        return response.route("/");
       }
     }
     //error
@@ -27,6 +27,14 @@ class LoginController {
       }
     });
     return response.redirect("back");
+  }
+
+  async sesion({auth, view}){
+    if(auth.user!=null){
+      return view.render('Menu_admin');//response.route("home");
+    }else{
+      return view.render('/auth/login');
+    }
   }
 }
 

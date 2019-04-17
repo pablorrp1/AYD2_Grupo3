@@ -6,39 +6,53 @@
 
   <ul class="list-unstyled components">
     <li>
-      <a href="/home">
+      <a href="/">
         <span data-feather="home"></span>
         Inicio <span class="sr-only"></span>
       </a>
     </li>
     <li>
-      <a class="disabled" href="#">
-        <span data-feather="scissors"></span>
-        Descuentos
-      </a>
-    </li>
-    <li>
       <a href="#InventarioSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
         <span data-feather="package"></span>
-        Inventario
+        Descuentos
       </a>
       <ul class="collapse list-unstyled" id="InventarioSubmenu">
         <li>
-          <a href="/productos">
-            <span data-feather="book"></span>
-            Productos
+          <a href="/descuento/lista">
+            <span data-feather="file-text"></span>
+            Lista
           </a>
         </li>
         <li>
-          <a href="/producto/agregar">
+          <a href="/descuento/agregar">
             <span data-feather="plus"></span>
-            Agregar producto
+            Agregar
           </a>
         </li>
       </ul>
     </li>
     <li>
-      <a href="/retiro">
+      <a href="#InventarioSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+        <span data-feather="package"></span>
+        Productos
+      </a>
+      <ul class="collapse list-unstyled" id="InventarioSubmenu">
+        <li>
+          <a href="/producto/lista">
+            <span data-feather="file-text"></span>
+            Lista
+          </a>
+        </li>
+        <li>
+          <a href="/producto/agregar">
+            <span data-feather="plus"></span>
+            Agregar
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="/retiros/lista">
         <span data-feather="truck"></span>
         Retiros
       </a>
@@ -50,7 +64,7 @@
       </a>
       <ul class="collapse list-unstyled" id="ProveedoresSubmenu">
         <li>
-          <a href="/proveedor/infop">
+          <a href="/proveedor/lista">
             <span data-feather="file-text"></span>
             Lista
           </a>
@@ -58,10 +72,32 @@
         <li>
           <a href="/proveedor/agregar">
             <span data-feather="plus"></span>
-            Agregar proveedor
+            Agregar
           </a>
         </li>
       </ul>
     </li>
+    <li>
+      <a href="#UsuariosSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+        <span data-feather="users"></span>
+        Usuarios
+      </a>
+      <ul class="collapse list-unstyled" id="UsuariosSubmenu">
+        <li>
+          <a href="/usuarios">
+            <span data-feather="file-text"></span>
+            Lista
+          </a>
+        </li>
+        <li>
+          <a>
+            <span data-feather="plus"></span>
+            Agregar
+          </a>
+        </li>
+      </ul>
+    </li>
+
+
   </ul>
 </nav>

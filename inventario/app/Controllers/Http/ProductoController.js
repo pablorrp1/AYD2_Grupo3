@@ -2,7 +2,7 @@
 const Database = use("Database");
 const Producto = use("App/Models/Producto");
 
-class ProductocontrolController {
+class ProductoController {
   async index({ request, auth, params, view }) {
     const page = request.get().page || 1
     const prods = await Database.table("productos")
@@ -56,8 +56,8 @@ class ProductocontrolController {
 
     session.flash({ notification: "Producto Agregado con exito " });
 
-    return response.redirect("/producto/agregar");
+    return response.redirect("/producto/lista");
   }
 }
 
-module.exports = ProductocontrolController;
+module.exports = ProductoController;

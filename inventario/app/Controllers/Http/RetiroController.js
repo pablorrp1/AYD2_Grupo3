@@ -5,7 +5,7 @@ const Producto = use("App/Models/Producto");
 
 const HistorialRetiro = use("App/Models/HistorialRetiro");
 
-class VentaProductoController {
+class RetiroController {
   async index({ request, auth, view }) {
     const page = request.get().page || 1;
     const prods = await Database.table("productos")
@@ -51,8 +51,8 @@ class VentaProductoController {
       notification: "Se retiraron " + retiro + " unidades del inventario"
     });
 
-    return response.redirect("/productos");
+    return response.redirect("/producto/lista");
   }
 }
 
-module.exports = VentaProductoController;
+module.exports = RetiroController;
