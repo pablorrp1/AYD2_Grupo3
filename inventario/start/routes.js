@@ -15,40 +15,44 @@
 
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
+//sesion
+Route.get("/",                      'Auth/LoginController.sesion');
+Route.post('register',              'Auth/RegisterController.register').as('register')
+Route.post('login',                 'Auth/LoginController.login').as('login')
+Route.get('logout',                 'Auth/AuthenticatedController.logout')
 
-Route.on("/").render("/auth/login");
+//usuarios
+Route.get("/usuarios",              'UsuarioController.index')
 
-Route.on('/home').render('Menu_admin')
+//productos
+Route.get("/producto/lista",        'ProductoController.index')
+Route.get('/producto/agregar',      'ProductoController.add')
+Route.post('/producto',             'ProductoController.store')
+Route.get("/producto/retiro/:id",   'ProductoController.retiro')
+Route.put("/retiro/:id",            'RetiroController.store')
 
-Route.on('/venta/crearventa').render('venta/crearventa')
-Route.get('/VentaControl0', 'VentaControl0Controller.index')
-Route.post('/venta', 'VentaControl0Controller.storeVenta')
+//retiros
+Route.get("/retiros/lista",         'RetiroController.index')
 
-Route.get("/productos","ProductocontrolController.index")
+//proveedores
+Route.get('/proveedor/lista',       'ProveedorController.index')
+Route.get('/proveedor/agregar',     'ProveedorController.add')
+Route.post('/proveedor',            'ProveedorController.store')
 
-Route.get("/producto/:id/retiro", "ProductocontrolController.retiro")
-Route.put("/retiro/:id","VentaProductoController.store")
-Route.get("/retiro","VentaProductoController.index")
-    
-Route.get('/producto/agregar', 'ProductocontrolController.add')
-Route.post('/producto', 'ProductocontrolController.store')
+//descuentos
+Route.get('/descuento/lista',       'DescuentoController.index')
 
-Route.get('register','Auth/RegisterController.showRegisterForm')
-Route.post('register', 'Auth/RegisterController.register').as('register')
-
-Route.get('login','Auth/LoginController.showLoginForm')
-Route.post('login', 'Auth/LoginController.login').as('login')
-
-Route.get('logout', 'Auth/AuthenticatedController.logout')
-
-// proveedores
-Route.get('/proveedor/infop', 'ProveedorController.viewp')
-Route.get('/proveedor/agregar', 'ProveedorController.add')
-Route.post('/proveedor', 'ProveedorController.store')
 
 
 /*
-    Route.get('<ruta>',function(){})
-    Route.get('<ruta>/<:id>',function({params}){})
-    Route.get('<ruta>','<controlador>.<funcion>')
-*/
+Route.on('/venta/crearventa').render('venta/crearventa')
+Route.get('/VentaControl0', 'DescuentoController.index')
+Route.post('/venta', 'DescuentoController.storeVenta')*/
+
+
+
+    
+
+
+
+

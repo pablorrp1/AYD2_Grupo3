@@ -1,20 +1,27 @@
-<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-    @loggedIn
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="/home">Inventario</a>
-        <p style="color:#ffffff";> 
-            Sesion iniciada : {{auth.user.nombre}}
-        </p>
-    @else
-        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="/">Inventario</a>
-    @endloggedIn
-    
-    <ul class="navbar-nav px-3">
-        <li class="nav-item text-nowrap">
-        @loggedIn
-            <a class="nav-link" href="/logout">Salir</a>
-        @else
-            <a class="nav-link" href="/register">Registrar</a>
-        @endloggedIn
-        </li>
-    </ul>
-</nav>
+@loggedIn
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#1F406D;color: #70D0F6;">
+        <div class="container-fluid">
+            <button type="button" id="sidebarCollapse" class="btn btn-light" style="background-color:#1F406D;color: #70D0F6;">
+                <span data-feather="menu"></span>
+                Menu
+            </button>
+            <div>
+                <span data-feather="user"></span>
+                    {{auth.user.nombre}}
+                <button type="button" class="btn btn-light" style="background-color:#1F406D;color: #70D0F6;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span data-feather="chevron-down"></span>
+                </button>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="/logout"><span data-feather="log-out"></span> Salir</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+@else
+    <nav class="navbar navbar-dark fixed-top flex-md-nowrap p-0 shadow" style="background-color:#1F406D;color: #fff;">
+        <a class="navbar-brand">   Inventario</a>
+        <button type="button" class="btn btn-light" style="background-color:#1F406D;color: #fff;" data-toggle="modal" data-target="#Register">
+            Registrar
+        </button>
+    </nav>
+@endloggedIn

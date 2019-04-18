@@ -5,37 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href={{ assetsUrl('descarga.ico') }}>
     <title>Inventario</title>
-    {{ script("http://code.jquery.com/jquery-1.11.3.min.js") }}
     {{ style('bootstrap.min') }}
     {{ style('dashboard') }}
     {{ style('bootstrap-theme.min') }}
   </head>
   <body>
     @include('includes/navbar')
-
+    @include('includes/register')
     <main role="main" >
-        <table class="table">
-           <tr>
-             <th scope="col">
-             <div class="row">
-               <div class="col-sm-7">
-                 <div class="card">
-                         @!section('contenido')
-                 </div>
-               </div>
-               <div class="col-sm-4">
-                 <div class="card text-white bg-dark mb-3 text-center" >
-                 <div class="card-header">Si no tiene usuario, registrarse.</div>
-                 <p class="card-text">
-                         @!section('logear')
-                 </p>
-               </div>
-               </div>
-               </div>
-             </th>
-           </tr>
-       </table>
-       </main>
-
+        @if(flashMessage('notification'))
+          <div class="alert alert-{{ flashMessage('notification.type') }}">
+            {{ flashMessage('notification.message') }}
+          </div>
+        @endif
+        <div class="row mt-1">
+          <div class="col-sm-6">
+              <div class="card m-2">
+                <div class="card-body">
+                  @!section('contenido')
+                </div>
+              </div>
+          </div>
+          <div class="col-sm-6">
+              <div class="card text-white mb-3 text-center m-2" style="background-color:#1F406D">
+                <div class="card-header">Si no tiene usuario, registrese.</div>
+                <p class="card-text">
+                  @!section('logear')
+                </p>
+              </div>
+          </div>
+        </div>
+      </main> 
   </body>
+  <footer>
+    {{ script('jquery-3.3.1.slim.min') }}
+    {{ script('bootstrap.min') }}
+  </footer>
 </html>

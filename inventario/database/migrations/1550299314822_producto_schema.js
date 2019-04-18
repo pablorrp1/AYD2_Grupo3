@@ -11,8 +11,8 @@ class ProductoSchema extends Schema {
       table.string('descripcion')
       table.integer('cantidad').unsigned().notNullable()
       table.float('precio').notNullable()
-      table.integer('cod_usuario').unsigned().references('id').inTable('usuario')
-      table.integer('cod_proveedor').unsigned().references('id').inTable('proveedor')
+      table.integer('cod_usuario').unsigned().references('id').inTable('users')
+      table.integer('cod_proveedor').unsigned().references('id').inTable('proveedors')
       table.timestamps()
     })
   }

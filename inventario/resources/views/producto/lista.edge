@@ -17,7 +17,7 @@
             </tr>
         </thead>
         <tbody>
-            @each(prod in prods)
+            @each(prod in prods.data)
             <tr>
                 <td>{{ prod.nombre }}</td>
                 <td>{{ prod.descripcion }}</td>
@@ -25,10 +25,14 @@
                 <td>{{ prod.cantidad }}</td>
                 <td>{{ prod.prov }}</td>
                 <td>
-                <a href="/producto/{{prod.id}}/retiro" class="btn btn-primary" role="button">Retirar</a>
+                <a href="/producto/retiro/{{prod.id}}" class="btn btn-primary" role="button">Retirar</a>
                 </td>
             </tr>
             @endeach
         </tbody>
     </table>
+    @if(prods.data.length)
+        <hr>
+        @!component('includes.pagination', pagination = prods, request = request, presenter = 'PaginationPresenter')
+    @endif
 @endsection

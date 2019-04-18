@@ -7,15 +7,13 @@
 @section('contenido')
     <table class="table table-striped">
         <tr>
-            <th>ID</th>
             <th>Nombre</th>
             <th>Dirección</th>
             <th>Teléfono</th>
             <th>Correo Electrónico</th>
         </tr>
-        @each(provee in proveedores)
+        @each(provee in proveedores.data)
         <tr>
-            <td>{{provee.id}}</td>
             <td>{{provee.nombre}}</td>
             <td>{{provee.direccion}}</td>
             <td>{{provee.telefono}}</td>
@@ -23,4 +21,9 @@
         </tr>
         @endeach
     </table>
+    @if(proveedores.data.length)
+        <hr>
+        @!component('includes.pagination', pagination = proveedores, request = request, presenter = 'PaginationPresenter')
+    @endif
+
 @endsection

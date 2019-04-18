@@ -1,0 +1,24 @@
+<nav>
+    <ul class="pagination pagination-lg justify-content-center">
+        <li class="page-item">
+            <a class="page-link"  aria-label="Previo" 
+            {{ isFirst(pagination) ? '' : 'href=?' + append(request.originalUrl(), 'page', pagination.page - 1) }}>
+                <span data-feather="chevron-left"></span>
+            </a>
+        </li>
+        @each(page in range(1, pagination.lastPage))
+        <li class="page-item">
+            <a class="page-link" 
+            {{ !isCurrent(pagination, page) ? 'href=?' + append(request.originalUrl(), 'page', page) : '' }}>
+                {{ page }}
+            </a>
+        </li>
+        @endeach
+        <li class="page-item">
+            <a class="page-link" aria-label="Siguiente"
+            {{ isLast(pagination) ? '' : 'href=?' + append(request.originalUrl(), 'page', pagination.page + 1) }}>
+                <span data-feather="chevron-right"></span>
+            </a>
+        </li>
+    </ul>
+</nav>
