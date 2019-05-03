@@ -1,0 +1,13 @@
+env: flex
+runtime: nodejs
+env_variables:
+  APP_KEY: "n8ngfv6OF5h5NWj9Ih7O4CpJO8q9uEL9"
+  API_URL: "https://sodium-carving-231416.appspot.com/api"
+  DB_CONNECTION: mysql
+  DB_HOST: "localhost"
+  DB_DATABASE: "inventariodb"
+  DB_USER: "root"
+  DB_PASSWORD: "ejemplo1234"
+  DB_SOCKET: "/cloudsql/sodium-carving-231416:us-central1:inventariodb"
+beta_settings:
+    cloud_sql_instances: sodium-carving-231416:us-central1:inventariodb
